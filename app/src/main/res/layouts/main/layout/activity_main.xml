@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    android:id="@+id/layout_main"
+    tools:context=".MainActivity"
+    android:clickable="true"
+    >
+
+    <RelativeLayout
+        android:id="@+id/main_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center">
+        <RelativeLayout
+            android:layout_width="1000dp"
+            android:layout_height="413dp">
+            <RelativeLayout
+                android:id="@+id/main_left"
+                android:layout_width="347dp"
+                android:descendantFocusability="beforeDescendants"
+                android:layout_height="match_parent"
+                android:background="@drawable/main_item_style">
+
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/icon_nurs"
+                    android:clickable="false"
+                    android:layout_marginTop="73dp"
+                    android:layout_centerHorizontal="true"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginBottom="76dp"
+                    android:clickable="false"
+                    android:textSize="48sp"
+                    android:textColor="#f1f1f1"
+                    android:text="医护人员"/>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/main_right"
+                android:layout_width="347dp"
+                android:descendantFocusability="beforeDescendants"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                android:background="@drawable/main_item_style">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/icon_heart"
+                    android:layout_marginTop="77dp"
+                    android:clickable="false"
+                    android:layout_centerHorizontal="true"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginBottom="76dp"
+                    android:textSize="48sp"
+                    android:clickable="false"
+                    android:textColor="#f1f1f1"
+                    android:text="患者及家属"/>
+            </RelativeLayout>
+        </RelativeLayout>
+    </RelativeLayout>
+
+</RelativeLayout>

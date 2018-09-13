@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">萧山中医院</string>
+
+    <string name="play_ended">播放结束</string>
+    <string name="play_again_makesure">是否再次播放？</string>
+    <string name="play_stop">不了</string>
+    <string name="play_again">再来一次</string>
+    <string name="update_patient_name">修改姓名</string>
+    <string name="sure_update">是否确认修改</string>
+    <string name="cancel">取消</string>
+
+    <!--medicalVideoActivity-->
+    <string name="before_hospital">入院宣教</string>
+    <string name="illness_teacher">疾病宣教</string>
+    <string name="operation_teacher">手术宣教</string>
+
+    <string name="medical_video_title">请确认</string>
+    <string name="medical_video_message">请确认急停开关是否打开</string>
+    <string name="medical_video_cancel">否</string>
+    <string name="medical_video_sure">是</string>
+</resources>

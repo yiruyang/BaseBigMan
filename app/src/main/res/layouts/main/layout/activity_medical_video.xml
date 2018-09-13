@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MedicalVideoActivity">
+
+    <RelativeLayout
+        android:id="@+id/left_relative"
+        android:layout_width="150dp"
+        android:layout_height="match_parent"
+        android:background="#269be5">
+
+        <ListView
+            android:id="@+id/left_listView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="250dp">
+        </ListView>
+
+        <ImageButton
+            android:id="@+id/medicalVideo_to_medical"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:background="@drawable/medical_to_login"
+            android:layout_marginLeft="23dp"
+            android:layout_marginTop="23dp"
+            />
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_toRightOf="@id/left_relative">
+
+        <TextView
+            android:id="@+id/video_type"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="类型"
+            android:textSize="28sp"
+            android:gravity="center"
+            android:textColor="#fff"
+            android:background="#35abbe"/>
+        <Button
+            android:id="@+id/multiple_choice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="多选"
+            android:layout_alignParentRight="true"
+            android:visibility="gone"/>
+
+        <ListView
+            android:id="@+id/medial_listView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@id/video_type">
+
+        </ListView>
+        
+        <Button
+            android:id="@+id/video_play"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_alignParentBottom="true"
+            android:text="播放"
+            android:textSize="20sp"
+            android:textColor="#fff"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="33dp"
+            android:layout_marginBottom="33dp"
+            android:background="@drawable/video_play"
+            android:visibility="gone"
+            />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/right_listViewRelative"
+        android:layout_width="150dp"
+        android:layout_height="match_parent"
+        android:background="#2dd5ff"
+        android:layout_toRightOf="@id/left_relative"
+        android:gravity="center_vertical">
+
+        <ListView
+            android:id="@+id/right_listView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone">
+        </ListView>
+
+    </RelativeLayout>
+</RelativeLayout>

@@ -1,0 +1,40 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <android.support.design.widget.TabLayout
+        android:id="@+id/patient_tabLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#2196f3"
+        app:tabIndicatorHeight="3dp"
+        app:tabGravity="fill"
+        app:tabMode="fixed"
+        app:tabMinWidth="200dp"
+        app:tabMaxWidth="200dp"
+        app:tabIndicatorColor="#e71304"
+        app:tabSelectedTextColor="#e71304">
+
+    </android.support.design.widget.TabLayout>
+
+    <ImageButton
+        android:id="@+id/patient_to_main"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:background="@drawable/medical_to_login"
+        android:layout_marginTop="11dp"
+        android:layout_marginLeft="23dp"
+        />
+
+    <com.reeman.basebigman.basic.NoScrollViewPager
+        android:id="@+id/patient_viewPager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="66dp"
+        android:layout_below="@id/patient_tabLayout">
+    </com.reeman.basebigman.basic.NoScrollViewPager>
+
+</RelativeLayout>

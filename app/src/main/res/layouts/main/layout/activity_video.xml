@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".VideoActivity"
+    android:gravity="center"
+    android:background="#000">
+
+    <VideoView
+        android:id="@+id/videoView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <ImageButton
+        android:id="@+id/video_to_patient"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@drawable/medical_to_login"
+        android:layout_marginTop="11dp"
+        android:layout_marginLeft="23dp"
+        />
+</RelativeLayout>

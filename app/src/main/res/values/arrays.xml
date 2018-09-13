@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="leftListView">
+        <item>入院宣教</item>
+        <item>疾病宣教</item>
+        <item>手术宣教</item>
+    </string-array>\
+
+    <string-array name="before">
+        <item>提供的健康情况</item>
+        <item>妥善保管物品</item>
+        <item>病房整洁、安静</item>
+        <item>注意人身安全</item>
+        <item>科室布局</item>
+        <item>其他</item>
+    </string-array>
+
+
+    <string-array name="operation">
+        <item>术前宣教</item>
+        <item>术后宣教</item>
+    </string-array>
+
+    <string-array name="illness">
+        <item>糖尿病</item>
+        <item>高血压</item>
+    </string-array>
+</resources>

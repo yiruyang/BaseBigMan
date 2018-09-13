@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="300dp"
+    android:layout_height="400dp"
+    android:background="@drawable/main_makesure_back">
+
+    <TextView
+        android:id="@+id/main_above_top"
+        android:layout_width="match_parent"
+        android:layout_height="79dp"
+        android:background="#22a7f2"
+        android:gravity="center"
+        android:text="医护人员登录"
+        android:textColor="#fffefe"
+        android:textSize="40sp" />
+
+    <EditText
+        android:id="@+id/main_password"
+        android:layout_width="200dp"
+        android:layout_height="72dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="113dp"
+        android:background="@drawable/main_makesure_edit"
+        android:gravity="center_vertical"
+        android:hint="请输入密码"
+        android:inputType="numberPassword"
+        android:paddingLeft="10dp"
+        android:textSize="28sp" />
+
+    <TextView
+        android:id="@+id/main_masu"
+        android:layout_width="200dp"
+        android:layout_height="72dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="100dp"
+        android:background="@drawable/main_button"
+        android:gravity="center"
+        android:text="确认登录"
+        android:textColor="#ffffff"
+        android:textSize="28sp" />
+</RelativeLayout>
+

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="10dp"
+    android:background="@drawable/layout_shadow">
+    <LinearLayout
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:orientation="vertical"
+        android:background="@drawable/medical_item_backstyle">
+
+        <TextView
+            android:id="@+id/operation_video_name"
+            android:layout_width="match_parent"
+            android:layout_height="79dp"
+            android:gravity="center"
+            android:textSize="23sp"
+            android:singleLine="true"
+            android:textColor="#fff"
+            android:hint="video"
+            android:background="#5da6f5"/>
+    </LinearLayout>
+</RelativeLayout>

@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/main_bg">
+
+    <ImageView
+        android:id="@+id/fm_iv_rect"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="44dp"
+        android:src="@drawable/anim_rec_icon"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/fm_iv_vol"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="36dp"
+        android:layout_marginStart="88dp"
+        android:background="@drawable/rec_vol1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ScrollView
+        android:id="@+id/fm_sv_response_result"
+        android:layout_width="1180dp"
+        android:layout_height="746dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="210dp"
+        android:background="@drawable/rec_answer_bg"
+        android:fillViewport="true"
+        android:padding="80dp"
+        android:scrollbars="vertical"
+        app:layout_constraintLeft_toRightOf="@id/fm_iv_vol"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/fm_tv_response_result"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbars="vertical"
+            android:singleLine="false"
+            android:textColor="#FFFFFF"
+            android:textSize="45dp" />
+    </ScrollView>
+
+
+    <RelativeLayout
+        android:id="@+id/fm_ll_show_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="60dp"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/show_time_bg"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextClock
+            android:id="@+id/fm_tv_textClock"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:format24Hour="HH:mm"
+            android:textColor="@android:color/white"
+            android:textSize="50sp" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/fm_tv_speech_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="84dp"
+        android:ellipsize="end"
+        android:lines="1"
+        android:singleLine="true"
+        android:textColor="@android:color/white"
+        android:textSize="35dp"
+        app:layout_constraintEnd_toStartOf="@+id/fm_ll_show_time"
+        app:layout_constraintHorizontal_bias="0.051"
+        app:layout_constraintStart_toEndOf="@+id/fm_iv_rect"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <ImageButton
+        android:id="@+id/go_charge"
+        android:layout_width="244dp"
+        android:layout_height="76dp"
+        android:layout_marginBottom="16dp"
+        android:layout_marginRight="244dp"
+        android:background="@drawable/charging"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <Button
+        android:id="@+id/reset"
+        android:layout_width="218dp"
+        android:layout_height="76dp"
+        android:layout_marginBottom="16dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/btn_background_main"
+        android:text="重定位"
+        android:textColor="@android:color/white"
+        android:textSize="28sp"
+        app:layout_constraintBottom_toBottomOf="@+id/go_charge"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.564"
+        app:layout_constraintStart_toEndOf="@+id/go_charge"
+        app:layout_constraintTop_toTopOf="@+id/go_charge" />
+
+    <ImageButton
+        android:id="@+id/login_to_main"
+        android:layout_width="218dp"
+        android:layout_height="76dp"
+        android:layout_marginBottom="16dp"
+        android:layout_marginRight="520dp"
+        android:background="@drawable/logintomain"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+</android.support.constraint.ConstraintLayout>
