@@ -81,9 +81,25 @@ public class MedicalVideoInitActivity extends AppCompatActivity {
         medicalVideoToLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                NavigationManager.getInstance().navigationByName("充电站");
-                startActivity(new Intent(MedicalVideoInitActivity.this, LoginActivity.class));
-                finish();
+                AlertDialog alertDialog = new AlertDialog.Builder(MedicalVideoInitActivity.this)
+                        .setTitle(R.string.medical_video_init_activity_title)
+                        .setMessage(R.string.medical_video_init_activity_message)
+                        .setPositiveButton(R.string.medical_video_init_activity_position, new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int i) {
+                                NavigationManager.getInstance().navigationByName("充电站");
+                                startActivity(new Intent(MedicalVideoInitActivity.this, LoginActivity.class));
+                                finish();
+                            }
+                        })
+                        .setNegativeButton(R.string.medical_video_init_activity_negative, new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int i) {
+                                dialogInterface.cancel();
+                            }
+                        })
+                        .create();
+                alertDialog.show();
             }
         });
         mOffTextView = new TextView(this);

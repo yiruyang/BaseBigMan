@@ -173,6 +173,7 @@ public class ChargeManager {
                 RobotActionProvider.getInstance().moveFront(20, 0);
                 break;
         }
+
         SpeechPlugin.getInstance().startSpeak("好的");
         if (SceneValue.SCENE_BATTERY_CONNECTING.equals(NerveManager.mSceneType)) {
             RobotActionProvider.getInstance().sendRosCom("bat:uncharge");

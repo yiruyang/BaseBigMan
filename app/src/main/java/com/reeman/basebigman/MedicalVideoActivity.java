@@ -33,6 +33,8 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.reeman.nerves.RobotActionProvider;
+
 import java.io.File;
 import java.io.FileFilter;
 import java.util.ArrayList;
@@ -157,18 +159,21 @@ public class MedicalVideoActivity extends AppCompatActivity {
                         .setPositiveButton(R.string.medical_video_sure, new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
-                                dialog.cancel();
-                                Intent intent = new Intent(MedicalVideoActivity.this, BeOnMove.class);
-                                three = medialData[position];
-                                mUrl = mSingleUrl + one + two + three;
-                                intent.putExtra("type", 1);
-                                intent.putExtra("medialData", mUrl);
-                                startActivity(intent);
-                                finish();
+                                if (0 == RobotActionProvider.getInstance().getScramState()){
+                                    Toast.makeText(getApplicationContext(), "请打开急停按钮", Toast.LENGTH_SHORT).show();
+                                }else {
+                                    dialog.cancel();
+                                    Intent intent = new Intent(MedicalVideoActivity.this, BeOnMove.class);
+                                    three = medialData[position];
+                                    mUrl = mSingleUrl + one + two + three;
+                                    intent.putExtra("type", 1);
+                                    intent.putExtra("medialData", mUrl);
+                                    startActivity(intent);
+                                    finish();
+                                }
                             }
                         }).create();
                 alertDialog.show();
-
             }
         });
 
@@ -189,19 +194,23 @@ public class MedicalVideoActivity extends AppCompatActivity {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
                                 if (mList.size() > 0){
-                                    Bundle bundle = new Bundle();
-                                    videoName = new String[medialListView.getCheckedItemCount()];
-                                    List newList = new ArrayList(new HashSet(mList));
-                                    Log.i("newList", String.valueOf(newList.size()));
-                                    for(int i = 0; i<newList.size(); i++){
-                                        videoName[i] = mmUrl + one + two + newList.get(i);
+                                    if (0 == RobotActionProvider.getInstance().getScramState()){
+                                        Toast.makeText(getApplicationContext(), "请打开急停按钮", Toast.LENGTH_SHORT).show();
+                                    }else {
+                                        Bundle bundle = new Bundle();
+                                        videoName = new String[medialListView.getCheckedItemCount()];
+                                        List newList = new ArrayList(new HashSet(mList));
+                                        Log.i("newList", String.valueOf(newList.size()));
+                                        for(int i = 0; i<newList.size(); i++){
+                                            videoName[i] = mmUrl + one + two + newList.get(i);
+                                        }
+                                        bundle.putStringArray("videoArrat", videoName);
+                                        Intent intent = new Intent(MedicalVideoActivity.this, BeOnMove.class);
+                                        intent.putExtra("type", 2);
+                                        intent.putExtras(bundle);
+                                        startActivity(intent);
+                                        finish();
                                     }
-                                    bundle.putStringArray("videoArrat", videoName);
-                                    Intent intent = new Intent(MedicalVideoActivity.this, BeOnMove.class);
-                                    intent.putExtra("type", 2);
-                                    intent.putExtras(bundle);
-                                    startActivity(intent);
-                                    finish();
                                 }else {
                                     Toast.makeText(getApplicationContext(), "请选择视频!", Toast.LENGTH_SHORT).show();
                                 }

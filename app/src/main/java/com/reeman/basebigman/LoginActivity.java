@@ -37,7 +37,7 @@ import robot.boocax.com.sdkmodule.utils.init_files.NaviContext;
 
 public class LoginActivity extends AppCompatActivity {
     private static final String TAG = LoginActivity.class.getSimpleName();
-    public static final String CONN_IP = "192.168.43.4";
+    public static final String CONN_IP = "192.168.1.184";
     private MainFragment mMainFragment;
     public static Context mContext;
 
@@ -57,8 +57,14 @@ public class LoginActivity extends AppCompatActivity {
         initView();
         init();
         initFilter();
-        EventBus.getDefault().register(this);
+        register();
         connectServer();
+    }
+
+    private void register() {
+        if (!EventBus.getDefault().isRegistered(this)) {
+            EventBus.getDefault().register(this);
+        }
     }
 
     // 连接到服务端 startService
@@ -113,6 +119,7 @@ public class LoginActivity extends AppCompatActivity {
     @Subscribe(threadMode = ThreadMode.POSTING)
     public void getMac(AllRobotMacList allRobotMacList) {
         if (allRobotMacList != null) {
+            Log.d("mac", "getMac: " + allRobotMacList.getList().get(0));
             LoginEntity.robotMac = allRobotMacList.getList().get(0);
         }
     }
@@ -142,8 +149,9 @@ public class LoginActivity extends AppCompatActivity {
         SpeechPlugin.getInstance().setCanRecognizeAIUI(true);
         SpeechPlugin.getInstance().setAIScene("main");    //讯飞语料场景设置
         SpeechPlugin.getInstance().setRecognizeZonn("吉迈导航|艾芯智能|商务机器人闲聊"); //按优先级设置知识库
-
     }
+
+
 
     private void initFilter() {
 

@@ -20,7 +20,7 @@
         <ImageView
             android:id="@+id/compare"
             android:layout_width="match_parent"
-            android:layout_height="48dp"/>
+            android:layout_height="80dp"/>
 
         <android.support.v7.widget.RecyclerView
             android:id="@+id/recyclerView"

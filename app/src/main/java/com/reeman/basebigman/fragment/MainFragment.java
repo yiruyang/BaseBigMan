@@ -4,6 +4,7 @@ import android.animation.ObjectAnimator;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -26,6 +27,7 @@ import org.greenrobot.eventbus.ThreadMode;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
+import robot.boocax.com.sdkmodule.entity.entity_app.LoginEntity;
 
 /**
  * Created by ye on 2017/11/8.
@@ -44,8 +46,6 @@ public class MainFragment extends BaseFragment<MainContract.View, MainPresenter>
     ImageButton loginToMain;
     @BindView(R.id.go_charge)
     ImageButton goCharge;
-    @BindView(R.id.reset)
-    Button reset;
 
 //    ObjectAnimator animation;
 
@@ -74,6 +74,8 @@ public class MainFragment extends BaseFragment<MainContract.View, MainPresenter>
         loginToMain.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Log.d("loginmain", LoginEntity.robotMac);
+                mPresenter.reset();
                 Intent intent = new Intent(getActivity(), MainActivity.class);
                 startActivity(intent);
             }
@@ -86,15 +88,6 @@ public class MainFragment extends BaseFragment<MainContract.View, MainPresenter>
             }
         });
 
-        // send reset command to SERVER
-        reset.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // start Anim
-//                animation.start();
-                mPresenter.reset();
-            }
-        });
         return view;
     }
 

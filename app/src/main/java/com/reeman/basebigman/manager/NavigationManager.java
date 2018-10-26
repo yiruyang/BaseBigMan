@@ -29,7 +29,6 @@ public class NavigationManager {
         return instance;
     }
     public interface ReachListener{
-        void stopState();
         void reach();
     }
 
@@ -85,8 +84,6 @@ public class NavigationManager {
         NerveManager.mSceneType = scenetype;
         RobotActionProvider.getInstance().sendRosCom(point);
     }
-
-
     /**
      * 处理导航回调
      * @param result move_status:x = ?  0 : 静止待命   1 : 上次目标失败，等待新的导航命令   2 : 上次目标完成，等待新的导航命令  
@@ -102,7 +99,6 @@ public class NavigationManager {
                 NerveManager.isMoving = false;
                 NerveManager.mSceneType = SceneValue.SCENE_NORMAL;
                 SpeechPlugin.getInstance().startSpeak("导航失败");
-                mReachListener.stopState();
                 break;
             case "move_status:2":
                 NerveManager.mSceneType = SceneValue.SCENE_NORMAL;
@@ -117,7 +113,7 @@ public class NavigationManager {
                 }else if ("充电站".equals(mNavLocation)) {
                     tip.append(mNavLocation).append("到了，开始对接充电桩");
                     SpeechPlugin.getInstance().startSpeak(tip.toString());
-                    SpeechPlugin.getInstance().setCurrentNavPoint("");                  
+                    SpeechPlugin.getInstance().setCurrentNavPoint("");
                 } else if (mNavLocation.contains("前台")) {
                     RobotActionProvider.getInstance().combinedActionTtyS4(32);
                     SpeechPlugin.getInstance().startSpeak("这里就是前台了");
@@ -132,10 +128,8 @@ public class NavigationManager {
                 break;
             case "move_status:4":
                 NerveManager.isMoving = false;
-                mReachListener.stopState();
                 break;
             case "move_status:5":
-                mReachListener.stopState();
                 break;
             case "move_status:6":
                 NerveManager.isMoving = false;

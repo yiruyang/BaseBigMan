@@ -32,8 +32,8 @@ public class MainPresenter extends BasePresenter<MainContract.View> implements M
     public static final int ACTION_SPEECH_RESULT = 2;
 
     //
-    private double x = 2;
-    private double y = -1.7;
+    private double x = -2.95;
+    private double y = -3.55;
     private double yaw = 0;
 
 

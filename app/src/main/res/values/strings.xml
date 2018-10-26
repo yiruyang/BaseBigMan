@@ -15,7 +15,13 @@
     <string name="operation_teacher">手术宣教</string>
 
     <string name="medical_video_title">请确认</string>
-    <string name="medical_video_message">请确认急停开关是否打开</string>
-    <string name="medical_video_cancel">否</string>
-    <string name="medical_video_sure">是</string>
+    <string name="medical_video_message">确认播放选中的视频吗？</string>
+    <string name="medical_video_cancel">重选</string>
+    <string name="medical_video_sure">确认</string>
+
+    <!--MedicalVideoInitActivity alertDialog-->
+    <string name="medical_video_init_activity_title">请确认</string>
+    <string name="medical_video_init_activity_message">我真的回去喽？</string>
+    <string name="medical_video_init_activity_position">回去吧</string>
+    <string name="medical_video_init_activity_negative">点错了</string>
 </resources>

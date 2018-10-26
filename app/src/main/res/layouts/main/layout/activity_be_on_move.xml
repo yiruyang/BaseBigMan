@@ -13,7 +13,7 @@
         android:orientation="vertical"
         android:layout_marginTop="380dp"
         android:background="#fff"
-        android:layout_marginLeft="990dp">
+        android:layout_marginLeft="975dp">
         <LinearLayout
             android:id="@+id/content"
             android:layout_width="wrap_content"
@@ -52,17 +52,19 @@
     </LinearLayout>
 
     <Button
-        android:id="@+id/btn_back"
+        android:id="@+id/btn_go_on"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
         android:layout_marginRight="30dp"
+        android:padding="10dp"
         android:layout_marginBottom="30dp"
         android:background="@drawable/main_button"
         android:textColor="@android:color/white"
         android:textSize="20sp"
-        android:text="返回"
+        android:text="继续前往"
+        android:visibility="gone"
         />
 
 </RelativeLayout>
